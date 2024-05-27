@@ -9,19 +9,29 @@
 /* Begin PBXBuildFile section */
 		02DF2EAF2C048027000FE9B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EAE2C048027000FE9B2 /* AppDelegate.swift */; };
 		02DF2EB12C048027000FE9B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EB02C048027000FE9B2 /* SceneDelegate.swift */; };
-		02DF2EB32C048027000FE9B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EB22C048027000FE9B2 /* ViewController.swift */; };
+		02DF2EB32C048027000FE9B2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EB22C048027000FE9B2 /* MapViewController.swift */; };
 		02DF2EB82C048029000FE9B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02DF2EB72C048029000FE9B2 /* Assets.xcassets */; };
 		02DF2EBB2C048029000FE9B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02DF2EB92C048029000FE9B2 /* LaunchScreen.storyboard */; };
+		02DF2EC62C04842E000FE9B2 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EC52C04842E000FE9B2 /* MapPresenter.swift */; };
+		02DF2EC82C048437000FE9B2 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EC72C048437000FE9B2 /* MapInteractor.swift */; };
+		02DF2ECA2C048448000FE9B2 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EC92C048448000FE9B2 /* MapRouter.swift */; };
+		02DF2ECC2C04847A000FE9B2 /* MapModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2ECB2C04847A000FE9B2 /* MapModels.swift */; };
+		02DF2ECE2C0484A8000FE9B2 /* MapWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2ECD2C0484A8000FE9B2 /* MapWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		02DF2EAB2C048027000FE9B2 /* BankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02DF2EAE2C048027000FE9B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02DF2EB02C048027000FE9B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		02DF2EB22C048027000FE9B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		02DF2EB22C048027000FE9B2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		02DF2EB72C048029000FE9B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02DF2EBA2C048029000FE9B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02DF2EBC2C048029000FE9B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02DF2EC52C04842E000FE9B2 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		02DF2EC72C048437000FE9B2 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
+		02DF2EC92C048448000FE9B2 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
+		02DF2ECB2C04847A000FE9B2 /* MapModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModels.swift; sourceTree = "<group>"; };
+		02DF2ECD2C0484A8000FE9B2 /* MapWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWorker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +66,41 @@
 			children = (
 				02DF2EAE2C048027000FE9B2 /* AppDelegate.swift */,
 				02DF2EB02C048027000FE9B2 /* SceneDelegate.swift */,
-				02DF2EB22C048027000FE9B2 /* ViewController.swift */,
+				02DF2EC22C0483CD000FE9B2 /* Scenes */,
 				02DF2EB72C048029000FE9B2 /* Assets.xcassets */,
 				02DF2EB92C048029000FE9B2 /* LaunchScreen.storyboard */,
 				02DF2EBC2C048029000FE9B2 /* Info.plist */,
 			);
 			path = BankApp;
+			sourceTree = "<group>";
+		};
+		02DF2EC22C0483CD000FE9B2 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				02DF2EC42C0483DD000FE9B2 /* ListScene */,
+				02DF2EC32C0483D4000FE9B2 /* MapScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		02DF2EC32C0483D4000FE9B2 /* MapScene */ = {
+			isa = PBXGroup;
+			children = (
+				02DF2EB22C048027000FE9B2 /* MapViewController.swift */,
+				02DF2ECB2C04847A000FE9B2 /* MapModels.swift */,
+				02DF2EC52C04842E000FE9B2 /* MapPresenter.swift */,
+				02DF2EC72C048437000FE9B2 /* MapInteractor.swift */,
+				02DF2EC92C048448000FE9B2 /* MapRouter.swift */,
+				02DF2ECD2C0484A8000FE9B2 /* MapWorker.swift */,
+			);
+			path = MapScene;
+			sourceTree = "<group>";
+		};
+		02DF2EC42C0483DD000FE9B2 /* ListScene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ListScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +173,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02DF2EB32C048027000FE9B2 /* ViewController.swift in Sources */,
+				02DF2EB32C048027000FE9B2 /* MapViewController.swift in Sources */,
 				02DF2EAF2C048027000FE9B2 /* AppDelegate.swift in Sources */,
+				02DF2ECE2C0484A8000FE9B2 /* MapWorker.swift in Sources */,
+				02DF2ECC2C04847A000FE9B2 /* MapModels.swift in Sources */,
 				02DF2EB12C048027000FE9B2 /* SceneDelegate.swift in Sources */,
+				02DF2EC82C048437000FE9B2 /* MapInteractor.swift in Sources */,
+				02DF2EC62C04842E000FE9B2 /* MapPresenter.swift in Sources */,
+				02DF2ECA2C048448000FE9B2 /* MapRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
