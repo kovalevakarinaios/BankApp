@@ -6,3 +6,22 @@
 //
 
 import Foundation
+
+enum MapModels {
+    
+    enum ATM {
+        
+        struct Request {
+            
+        }
+        
+        struct Response {
+            
+        }
+        
+        struct ViewModel {
+            
+        }
+        
+    }
+}
