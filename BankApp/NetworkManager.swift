@@ -54,7 +54,7 @@ class NetworkManager: NetworkManagerProtocol {
             }
             task.resume()
         case .failure(let error):
-            print("Wrong URL")
+            print(error)
         }
         
     }
