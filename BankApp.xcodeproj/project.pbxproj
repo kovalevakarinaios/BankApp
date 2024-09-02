@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02CE93CC2C7DC0AC00CE6F66 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE93CB2C7DC0AC00CE6F66 /* HeaderView.swift */; };
+		02CE93CF2C7DF7EC00CE6F66 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE93CE2C7DF7EC00CE6F66 /* DetailedViewController.swift */; };
+		02CE93D12C7E073D00CE6F66 /* DetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE93D02C7E073D00CE6F66 /* DetailModels.swift */; };
+		02CE93D32C7E094600CE6F66 /* DetailedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE93D22C7E094600CE6F66 /* DetailedInteractor.swift */; };
+		02CE93D52C7E0BF400CE6F66 /* DetailedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE93D42C7E0BF400CE6F66 /* DetailedRouter.swift */; };
+		02CE93D72C7E0CDE00CE6F66 /* DetailedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE93D62C7E0CDE00CE6F66 /* DetailedPresenter.swift */; };
+		02CE93DA2C809E9200CE6F66 /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE93D92C809E9200CE6F66 /* ListRouter.swift */; };
+		02CE93DD2C81F6FD00CE6F66 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02CE93DF2C81F6FD00CE6F66 /* Localizable.strings */; };
+		02CE93E22C81FCF500CE6F66 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE93E12C81FCF500CE6F66 /* LocalizedStrings.swift */; };
+		02CE93E42C859BCB00CE6F66 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE93E32C859BCB00CE6F66 /* Storage.swift */; };
 		02DF2EAF2C048027000FE9B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EAE2C048027000FE9B2 /* AppDelegate.swift */; };
 		02DF2EB12C048027000FE9B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EB02C048027000FE9B2 /* SceneDelegate.swift */; };
 		02DF2EB32C048027000FE9B2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EB22C048027000FE9B2 /* MapViewController.swift */; };
@@ -16,7 +26,6 @@
 		02DF2EC82C048437000FE9B2 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EC72C048437000FE9B2 /* MapInteractor.swift */; };
 		02DF2ECA2C048448000FE9B2 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EC92C048448000FE9B2 /* MapRouter.swift */; };
 		02DF2ECC2C04847A000FE9B2 /* MapModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2ECB2C04847A000FE9B2 /* MapModels.swift */; };
-		02DF2ECE2C0484A8000FE9B2 /* MapWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2ECD2C0484A8000FE9B2 /* MapWorker.swift */; };
 		02DF2ED02C049E7C000FE9B2 /* ATM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2ECF2C049E7B000FE9B2 /* ATM.swift */; };
 		02DF2ED22C04ECD4000FE9B2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2ED12C04ECD4000FE9B2 /* NetworkManager.swift */; };
 		02DF2ED42C076C3A000FE9B2 /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2ED32C076C3A000FE9B2 /* Configurator.swift */; };
@@ -24,9 +33,26 @@
 		02DF2ED82C0CC234000FE9B2 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2ED72C0CC234000FE9B2 /* ListViewController.swift */; };
 		02DF2EDB2C0DAAC3000FE9B2 /* CalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EDA2C0DAAC3000FE9B2 /* CalloutView.swift */; };
 		02DF2EDD2C0DAE8A000FE9B2 /* AnnotationAtm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EDC2C0DAE8A000FE9B2 /* AnnotationAtm.swift */; };
+		02DF2EE12C0DEBED000FE9B2 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EDF2C0DEBED000FE9B2 /* CardCell.swift */; };
+		02DF2EE42C0DFA97000FE9B2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EE32C0DFA97000FE9B2 /* DataManager.swift */; };
+		02DF2EE62C0DFB8C000FE9B2 /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EE52C0DFB8C000FE9B2 /* ListPresenter.swift */; };
+		02DF2EE82C0DFB95000FE9B2 /* ListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EE72C0DFB95000FE9B2 /* ListInteractor.swift */; };
+		02DF2EEA2C0DFD83000FE9B2 /* ListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EE92C0DFD83000FE9B2 /* ListModels.swift */; };
+		02DF2EEC2C0E0230000FE9B2 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF2EEB2C0E0230000FE9B2 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02CE93CB2C7DC0AC00CE6F66 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		02CE93CE2C7DF7EC00CE6F66 /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
+		02CE93D02C7E073D00CE6F66 /* DetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModels.swift; sourceTree = "<group>"; };
+		02CE93D22C7E094600CE6F66 /* DetailedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedInteractor.swift; sourceTree = "<group>"; };
+		02CE93D42C7E0BF400CE6F66 /* DetailedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedRouter.swift; sourceTree = "<group>"; };
+		02CE93D62C7E0CDE00CE6F66 /* DetailedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPresenter.swift; sourceTree = "<group>"; };
+		02CE93D92C809E9200CE6F66 /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
+		02CE93DE2C81F6FD00CE6F66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		02CE93E02C81F71000CE6F66 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		02CE93E12C81FCF500CE6F66 /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
+		02CE93E32C859BCB00CE6F66 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		02DF2EAB2C048027000FE9B2 /* BankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02DF2EAE2C048027000FE9B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02DF2EB02C048027000FE9B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +64,6 @@
 		02DF2EC72C048437000FE9B2 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
 		02DF2EC92C048448000FE9B2 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
 		02DF2ECB2C04847A000FE9B2 /* MapModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModels.swift; sourceTree = "<group>"; };
-		02DF2ECD2C0484A8000FE9B2 /* MapWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWorker.swift; sourceTree = "<group>"; };
 		02DF2ECF2C049E7B000FE9B2 /* ATM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATM.swift; sourceTree = "<group>"; };
 		02DF2ED12C04ECD4000FE9B2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		02DF2ED32C076C3A000FE9B2 /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
@@ -46,6 +71,12 @@
 		02DF2ED72C0CC234000FE9B2 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		02DF2EDA2C0DAAC3000FE9B2 /* CalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutView.swift; sourceTree = "<group>"; };
 		02DF2EDC2C0DAE8A000FE9B2 /* AnnotationAtm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationAtm.swift; sourceTree = "<group>"; };
+		02DF2EDF2C0DEBED000FE9B2 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		02DF2EE32C0DFA97000FE9B2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		02DF2EE52C0DFB8C000FE9B2 /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
+		02DF2EE72C0DFB95000FE9B2 /* ListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
+		02DF2EE92C0DFD83000FE9B2 /* ListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModels.swift; sourceTree = "<group>"; };
+		02DF2EEB2C0E0230000FE9B2 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +90,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02CE93CD2C7DF7D800CE6F66 /* DetailedScene */ = {
+			isa = PBXGroup;
+			children = (
+				02CE93CE2C7DF7EC00CE6F66 /* DetailedViewController.swift */,
+				02CE93D22C7E094600CE6F66 /* DetailedInteractor.swift */,
+				02CE93D62C7E0CDE00CE6F66 /* DetailedPresenter.swift */,
+				02CE93D02C7E073D00CE6F66 /* DetailModels.swift */,
+				02CE93D42C7E0BF400CE6F66 /* DetailedRouter.swift */,
+			);
+			path = DetailedScene;
+			sourceTree = "<group>";
+		};
 		02DF2EA22C048027000FE9B2 = {
 			isa = PBXGroup;
 			children = (
@@ -82,12 +125,16 @@
 				02DF2EB02C048027000FE9B2 /* SceneDelegate.swift */,
 				02DF2ECF2C049E7B000FE9B2 /* ATM.swift */,
 				02DF2ED12C04ECD4000FE9B2 /* NetworkManager.swift */,
-				02DF2ED52C0CC1CF000FE9B2 /* ContainerViewController.swift */,
+				02DF2EE32C0DFA97000FE9B2 /* DataManager.swift */,
 				02DF2ED32C076C3A000FE9B2 /* Configurator.swift */,
+				02DF2EEB2C0E0230000FE9B2 /* Helper.swift */,
+				02CE93E12C81FCF500CE6F66 /* LocalizedStrings.swift */,
+				02CE93E32C859BCB00CE6F66 /* Storage.swift */,
 				02DF2EC22C0483CD000FE9B2 /* Scenes */,
 				02DF2EB72C048029000FE9B2 /* Assets.xcassets */,
 				02DF2EB92C048029000FE9B2 /* LaunchScreen.storyboard */,
 				02DF2EBC2C048029000FE9B2 /* Info.plist */,
+				02CE93DF2C81F6FD00CE6F66 /* Localizable.strings */,
 			);
 			path = BankApp;
 			sourceTree = "<group>";
@@ -95,8 +142,10 @@
 		02DF2EC22C0483CD000FE9B2 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				02DF2EC42C0483DD000FE9B2 /* ListScene */,
+				02DF2ED52C0CC1CF000FE9B2 /* ContainerViewController.swift */,
 				02DF2EC32C0483D4000FE9B2 /* MapScene */,
+				02CE93CD2C7DF7D800CE6F66 /* DetailedScene */,
+				02DF2EC42C0483DD000FE9B2 /* ListScene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -105,11 +154,10 @@
 			isa = PBXGroup;
 			children = (
 				02DF2ED92C0DAA9F000FE9B2 /* Views */,
-				02DF2EB22C048027000FE9B2 /* MapViewController.swift */,
 				02DF2ECB2C04847A000FE9B2 /* MapModels.swift */,
-				02DF2EC52C04842E000FE9B2 /* MapPresenter.swift */,
+				02DF2EB22C048027000FE9B2 /* MapViewController.swift */,
 				02DF2EC72C048437000FE9B2 /* MapInteractor.swift */,
-				02DF2ECD2C0484A8000FE9B2 /* MapWorker.swift */,
+				02DF2EC52C04842E000FE9B2 /* MapPresenter.swift */,
 				02DF2EC92C048448000FE9B2 /* MapRouter.swift */,
 			);
 			path = MapScene;
@@ -118,7 +166,12 @@
 		02DF2EC42C0483DD000FE9B2 /* ListScene */ = {
 			isa = PBXGroup;
 			children = (
+				02DF2EDE2C0DEBBF000FE9B2 /* Views */,
 				02DF2ED72C0CC234000FE9B2 /* ListViewController.swift */,
+				02DF2EE72C0DFB95000FE9B2 /* ListInteractor.swift */,
+				02DF2EE52C0DFB8C000FE9B2 /* ListPresenter.swift */,
+				02DF2EE92C0DFD83000FE9B2 /* ListModels.swift */,
+				02CE93D92C809E9200CE6F66 /* ListRouter.swift */,
 			);
 			path = ListScene;
 			sourceTree = "<group>";
@@ -128,6 +181,15 @@
 			children = (
 				02DF2EDA2C0DAAC3000FE9B2 /* CalloutView.swift */,
 				02DF2EDC2C0DAE8A000FE9B2 /* AnnotationAtm.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		02DF2EDE2C0DEBBF000FE9B2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				02DF2EDF2C0DEBED000FE9B2 /* CardCell.swift */,
+				02CE93CB2C7DC0AC00CE6F66 /* HeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -174,6 +236,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 02DF2EA22C048027000FE9B2;
 			productRefGroup = 02DF2EAC2C048027000FE9B2 /* Products */;
@@ -191,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02DF2EBB2C048029000FE9B2 /* LaunchScreen.storyboard in Resources */,
+				02CE93DD2C81F6FD00CE6F66 /* Localizable.strings in Resources */,
 				02DF2EB82C048029000FE9B2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,20 +266,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02CE93DA2C809E9200CE6F66 /* ListRouter.swift in Sources */,
 				02DF2ED02C049E7C000FE9B2 /* ATM.swift in Sources */,
+				02DF2EE42C0DFA97000FE9B2 /* DataManager.swift in Sources */,
+				02CE93D32C7E094600CE6F66 /* DetailedInteractor.swift in Sources */,
 				02DF2ED42C076C3A000FE9B2 /* Configurator.swift in Sources */,
 				02DF2EB32C048027000FE9B2 /* MapViewController.swift in Sources */,
 				02DF2ED22C04ECD4000FE9B2 /* NetworkManager.swift in Sources */,
 				02DF2EDD2C0DAE8A000FE9B2 /* AnnotationAtm.swift in Sources */,
+				02CE93D52C7E0BF400CE6F66 /* DetailedRouter.swift in Sources */,
+				02DF2EE12C0DEBED000FE9B2 /* CardCell.swift in Sources */,
+				02DF2EEC2C0E0230000FE9B2 /* Helper.swift in Sources */,
 				02DF2EAF2C048027000FE9B2 /* AppDelegate.swift in Sources */,
-				02DF2ECE2C0484A8000FE9B2 /* MapWorker.swift in Sources */,
 				02DF2ECC2C04847A000FE9B2 /* MapModels.swift in Sources */,
 				02DF2EB12C048027000FE9B2 /* SceneDelegate.swift in Sources */,
+				02DF2EEA2C0DFD83000FE9B2 /* ListModels.swift in Sources */,
+				02DF2EE62C0DFB8C000FE9B2 /* ListPresenter.swift in Sources */,
+				02CE93CC2C7DC0AC00CE6F66 /* HeaderView.swift in Sources */,
+				02CE93D72C7E0CDE00CE6F66 /* DetailedPresenter.swift in Sources */,
+				02CE93E22C81FCF500CE6F66 /* LocalizedStrings.swift in Sources */,
+				02CE93D12C7E073D00CE6F66 /* DetailModels.swift in Sources */,
+				02CE93CF2C7DF7EC00CE6F66 /* DetailedViewController.swift in Sources */,
 				02DF2EC82C048437000FE9B2 /* MapInteractor.swift in Sources */,
+				02DF2EE82C0DFB95000FE9B2 /* ListInteractor.swift in Sources */,
 				02DF2EC62C04842E000FE9B2 /* MapPresenter.swift in Sources */,
 				02DF2ED62C0CC1CF000FE9B2 /* ContainerViewController.swift in Sources */,
 				02DF2ED82C0CC234000FE9B2 /* ListViewController.swift in Sources */,
 				02DF2ECA2C048448000FE9B2 /* MapRouter.swift in Sources */,
+				02CE93E42C859BCB00CE6F66 /* Storage.swift in Sources */,
 				02DF2EDB2C0DAAC3000FE9B2 /* CalloutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +301,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		02CE93DF2C81F6FD00CE6F66 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02CE93DE2C81F6FD00CE6F66 /* en */,
+				02CE93E02C81F71000CE6F66 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		02DF2EB92C048029000FE9B2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -239,6 +326,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -302,6 +390,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

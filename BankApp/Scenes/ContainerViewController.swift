@@ -17,15 +17,32 @@ class ContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh,
-                                                                 target: self,
-                                                                 action: #selector(self.updateContent))
+     
+        self.setupNavigationBar()
         self.setupSegmentedControl()
+        self.updateContent()
         self.add(asChildViewController: self.mapVC)
+        
+        if let listRouter = (listVC as? ListViewController)?.router as? ListRouter {
+            listRouter.containerViewController = self
+        }
     }
     
+    private func setupNavigationBar() {
+        self.navigationController?.navigationBar.tintColor = .systemGreen
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .refresh,
+                                                                   target: self,
+                                                                   action: #selector(self.updateContent)),
+                                                   UIBarButtonItem(title: nil,
+                                                                   image: UIImage(systemName: "location.fill"),
+                                                                   target: self,
+                                                                   action: #selector(self.updateLocation))
+        ]
+    }
+     
     private func setupSegmentedControl() {
-        self.segmentedControl = UISegmentedControl(items: ["Map", "List"])
+        self.segmentedControl = UISegmentedControl(items: [LocalizedStrings.mapTitle.localized,
+                                                           LocalizedStrings.listTitle.localized])
         self.segmentedControl.selectedSegmentIndex = 0
         self.navigationItem.titleView = self.segmentedControl
         self.segmentedControl.addTarget(self, action: #selector(self.segmentedControlValueChanged), for: .valueChanged)
@@ -61,7 +78,22 @@ class ContainerViewController: UIViewController {
         vc.removeFromParent()
     }
     
+    func switchToMapViewController(id: Int) {
+        self.segmentedControl.selectedSegmentIndex = 0
+        self.remove(asChildViewController: self.listVC)
+        self.add(asChildViewController: self.mapVC)
+        if let mapVc = self.mapVC as? MapViewController {
+            mapVc.selectAnnotationForAtm(id: id)
+        }
+    }
+    
     @objc private func updateContent() {
-        // Update Content Function
+        DataManager.shared.fetchATMs()
+    }
+    
+    @objc private func updateLocation() {
+        if let mapVc = self.mapVC as? MapViewController {
+            mapVc.mapInteractor?.requestUserLocation()
+        }
     }
 }

@@ -25,5 +25,4 @@ class AnnotationAtm: NSObject, MKAnnotation {
         self.atmCurrency = atmCurrency
         self.coordinate = coordinate
     }
-    
 }

@@ -56,6 +56,5 @@ class NetworkManager: NetworkManagerProtocol {
         case .failure(let error):
             print(error)
         }
-        
     }
 }

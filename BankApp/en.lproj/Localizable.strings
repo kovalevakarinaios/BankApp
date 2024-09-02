@@ -1,0 +1,46 @@
+/* 
+  Localizable.strings
+  BankApp
+
+  Created by Karina Kovaleva on 30.08.24.
+  
+*/
+
+"map_Title" = "Map";
+"list_Title" = "List";
+"cancel" = "Cancel";
+"detailed" = "More detailed";
+"settings" = "Settings";
+"monday" = "Monday";
+"tuesday" = "Tuesday";
+"wednesday" = "Wednesday";
+"thursday" = "Thursday";
+"friday" = "Friday";
+"saturday" = "Saturday";
+"sunday" = "Sunday";
+"address" = "Address";
+"phone_Number" = "Phone number";
+"type" = "Type";
+"build_A_Route" = "Build a route";
+"available_Services" = "Available services";
+"cards" = "Payment cards available for usage";
+"currency" = "All available currencies";
+"base_Currency" = "Base currency";
+"from" = "from";
+"to" = "to";
+"operating_mode" = "Operating mode";
+"access24Hours" = "Round the clock";
+"status" = "Status";
+"working" = "Working";
+"not_working" = "Not working";
+"temp_not_working" = "Temporarily disabled";
+"atm" = "ATM";
+"pst" = "Payment-reference terminal";
+"cashin" = "Payment-reference terminal with cash-in";
+"info_unavailable" = "Information unavailable";
+"choose_app" = "Choose an app to build a route";
+"alert_routing_title" = "Routing is not possible";
+"alert_routing_message" = "To build a route you need to grant permission to use geolocation, you can do this in the settings.";
+"alert_access_location_title" = "Location Settings";
+"alert_access_location_message" = "To see yourself on a map and be able to plot a path to an ATM, allow this app to use your location. You can do this in the Settings.";
+

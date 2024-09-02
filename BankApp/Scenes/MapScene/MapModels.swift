@@ -5,22 +5,25 @@
 //  Created by Karina Kovaleva on 27.05.24.
 //
 
-import Foundation
+import MapKit
 
 enum MapModels {
     
-    enum ATMEnum {
+    struct Request {
         
-        struct Request {
-            
-        }
-        
-        struct Response {
+    }
+    
+    struct Response {
+        struct AtmsResponse {
             let atms: [ATM]
         }
-        
-        struct ViewModel {
-            
+        struct LocationResponse {
+            let location: CLLocation
+        }
+    }
+    
+    struct ViewModel {
+        struct AtmsViewModel {
             let atmsForMap: [AtmForMap]
             
             struct AtmForMap {
@@ -33,5 +36,16 @@ enum MapModels {
                 let longitude: Double
             }
         }
+        
+        struct LocationViewModel {
+            let latitude: CLLocationDegrees
+            let longitude: CLLocationDegrees
+        }
+        
+        struct LocationAlertControllerViewModel {
+            let title: String
+            let message: String
+        }
+       
     }
 }
