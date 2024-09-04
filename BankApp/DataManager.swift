@@ -32,13 +32,8 @@ class DataManager: DataManaging {
             case .success(let response):
                 self.sharedData = response.data.atm
                 let db = Storage.db
-                
                 Storage.createTable()
-                response.data.atm.forEach {   Storage.insert(atm: $0) }
-              
-                
-                Storage.query()
-                
+                response.data.atm.forEach { Storage.insert(atm: $0) }
             case .failure(let error):
                 print(error.localizedDescription)
             }
