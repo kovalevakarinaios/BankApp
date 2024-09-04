@@ -126,6 +126,6 @@ struct ContactDetails: Codable {
 // MARK: - Service
 struct Service: Codable {
     let serviceType: String
-    let description: String
+    let description: String?
 }
 

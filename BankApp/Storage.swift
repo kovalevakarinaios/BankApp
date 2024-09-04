@@ -10,7 +10,21 @@ import SQLite3
 
 class Storage {
     
-    static let db = openDatabase()
+    static let db: OpaquePointer? = {
+        var db: OpaquePointer?
+        let fileUrl = try! FileManager.default
+            .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            .appendingPathComponent("BankApp_ATM.sqlite")
+        
+        if sqlite3_open(fileUrl.path, &db) != SQLITE_OK {
+            print("Error opening database")
+            return nil
+        } else {
+            print("Successfully opened connection to database")
+            return db
+        }
+        
+    }()
     
     private static let createMainTableAtm = """
     CREATE TABLE ATM(
@@ -71,25 +85,6 @@ class Storage {
     cards TEXT,
     phoneNumber TEXT);
     """
-
-    static func openDatabase() -> OpaquePointer? {
-        var db: OpaquePointer?
-        
-        let pathDb = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appending(path: "myDatabase.sqlite")
-        
-        guard let pathDb = pathDb else {
-            print("pathDb is nil")
-            return nil
-        }
-        
-        if sqlite3_open(pathDb.path(), &db) == SQLITE_OK {
-            print("Successfully opened connection to database at \(pathDb)")
-            return db
-        } else {
-            print("Unable to open database.")
-            return nil
-        }
-    }
     
     static func createTable() {
         
@@ -207,33 +202,92 @@ class Storage {
         }
     }
     
-    static func query() {
+    static func queryAllAtms() -> [ATM] {
         var queryStatement: OpaquePointer?
-        let queryStatementString = "SELECT * FROM Geolocation;"
+        let queryStatementString = "SELECT * FROM ATM;"
+        var atms: [ATM] = []
         
         if sqlite3_prepare_v2(self.db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
             
-            if sqlite3_step(queryStatement) == SQLITE_ROW {
-                guard let latitude = sqlite3_column_text(queryStatement, 0) else {
-                    print("Query result is nil")
-                    return
-                }
-                guard let longitude = sqlite3_column_text(queryStatement, 1) else {
-                    print("Query result is nil")
-                    return
-                }
-                let latitudeName = String(cString: latitude)
-                let longitudeName = String(cString: longitude)
-                print("\nQuery Result:")
-                print("\(latitudeName) | \(longitudeName)")
-            } else {
-                print("\nQuery returned no results.")
+            while sqlite3_step(queryStatement) == SQLITE_ROW {
+                let atmID = String(cString: sqlite3_column_text(queryStatement, 0))
+                let type = String(cString: sqlite3_column_text(queryStatement, 1))
+                let baseCurrency = String(cString: sqlite3_column_text(queryStatement, 2))
+                let currency = String(cString: sqlite3_column_text(queryStatement, 3))
+                let atmPrinter = sqlite3_column_int(queryStatement, 4) == 1 ? true : false
+                let currentStatus = String(cString: sqlite3_column_text(queryStatement, 5))
+                let address = Address(streetName: String(cString: sqlite3_column_text(queryStatement, 6)),
+                                      buildingNumber: String(cString: sqlite3_column_text(queryStatement, 7)),
+                                      townName: String(cString: sqlite3_column_text(queryStatement, 8)),
+                                      countrySubDivision: String(cString: sqlite3_column_text(queryStatement, 9)),
+                                      country: String(cString: sqlite3_column_text(queryStatement, 10)),
+                                      addressLine: String(cString: sqlite3_column_text(queryStatement, 11)),
+                                      description: String(cString: sqlite3_column_text(queryStatement, 12)),
+                                      geolocation: Geolocation(geographicCoordinates: GeographicCoordinates(latitude: String(cString: sqlite3_column_text(queryStatement, 13)),
+                                                                                                            longitude: String(cString: sqlite3_column_text(queryStatement, 14)))))
+                let monday = Day(dayCode: String(cString: sqlite3_column_text(queryStatement, 18)),
+                                 openingTime: String(cString: sqlite3_column_text(queryStatement, 19)),
+                                 closingTime: String(cString: sqlite3_column_text(queryStatement, 20)),
+                                 dayBreak: Break(breakFromTime: String(cString: sqlite3_column_text(queryStatement, 21)),
+                                                 breakToTime: String(cString: sqlite3_column_text(queryStatement, 22))))
+                let tuesday = Day(dayCode: String(cString: sqlite3_column_text(queryStatement, 23)),
+                                  openingTime: String(cString: sqlite3_column_text(queryStatement, 24)),
+                                  closingTime: String(cString: sqlite3_column_text(queryStatement, 25)),
+                                  dayBreak: Break(breakFromTime: String(cString: sqlite3_column_text(queryStatement, 26)),
+                                                  breakToTime: String(cString: sqlite3_column_text(queryStatement, 27))))
+                let wednesday = Day(dayCode: String(cString: sqlite3_column_text(queryStatement, 28)),
+                                    openingTime: String(cString: sqlite3_column_text(queryStatement, 29)),
+                                    closingTime: String(cString: sqlite3_column_text(queryStatement, 30)),
+                                    dayBreak: Break(breakFromTime: String(cString: sqlite3_column_text(queryStatement, 31)),
+                                                    breakToTime: String(cString: sqlite3_column_text(queryStatement, 32))))
+                let thursday = Day(dayCode: String(cString: sqlite3_column_text(queryStatement, 33)),
+                                   openingTime: String(cString: sqlite3_column_text(queryStatement, 34)),
+                                   closingTime: String(cString: sqlite3_column_text(queryStatement, 35)),
+                                   dayBreak: Break(breakFromTime: String(cString: sqlite3_column_text(queryStatement, 36)),
+                                                   breakToTime: String(cString: sqlite3_column_text(queryStatement, 37))))
+                let friday = Day(dayCode: String(cString: sqlite3_column_text(queryStatement, 38)),
+                                 openingTime: String(cString: sqlite3_column_text(queryStatement, 39)),
+                                 closingTime: String(cString: sqlite3_column_text(queryStatement, 40)),
+                                 dayBreak: Break(breakFromTime: String(cString: sqlite3_column_text(queryStatement, 41)),
+                                                 breakToTime: String(cString: sqlite3_column_text(queryStatement, 42))))
+                let saturday = Day(dayCode: String(cString: sqlite3_column_text(queryStatement, 43)),
+                                   openingTime: String(cString: sqlite3_column_text(queryStatement, 44)),
+                                   closingTime: String(cString: sqlite3_column_text(queryStatement, 45)),
+                                   dayBreak: Break(breakFromTime: String(cString: sqlite3_column_text(queryStatement, 46)),
+                                                   breakToTime: String(cString: sqlite3_column_text(queryStatement, 47))))
+                let sunday = Day(dayCode: String(cString: sqlite3_column_text(queryStatement, 48)),
+                                 openingTime: String(cString: sqlite3_column_text(queryStatement, 49)),
+                                 closingTime: String(cString: sqlite3_column_text(queryStatement, 50)),
+                                 dayBreak: Break(breakFromTime: String(cString: sqlite3_column_text(queryStatement, 51)),
+                                                 breakToTime: String(cString: sqlite3_column_text(queryStatement, 52))))
+                
+                let availability = Availability(access24Hours: sqlite3_column_int(queryStatement, 15) == 1 ? true : false,
+                                                isRestricted: sqlite3_column_int(queryStatement, 16) == 1 ? true : false,
+                                                sameAsOrganization: sqlite3_column_int(queryStatement, 17) == 1 ? true : false,
+                                                standardAvailability: StandardAvailability(day: [monday, tuesday, wednesday, thursday, friday, saturday, sunday]))
+                let services = String(cString: sqlite3_column_text(queryStatement, 53)).split(separator: ", ").map{ Service(serviceType: String($0), description: nil) }
+                let cards = String(cString: sqlite3_column_text(queryStatement, 54)).split(separator: ", ").map{ String($0) }
+                let phoneNumber = String(cString: sqlite3_column_text(queryStatement, 55))
+                
+                let atm = ATM(atmID: atmID, 
+                              type: type,
+                              baseCurrency: baseCurrency,
+                              currency: currency,
+                              atmPrinter: atmPrinter,
+                              cards: cards,
+                              currentStatus: currentStatus,
+                              address: address,
+                              services: services,
+                              availability: availability,
+                              contactDetails: ContactDetails(phoneNumber: phoneNumber))
+                atms.append(atm)
             }
         }  else {
             let errorMessage = String(cString: sqlite3_errmsg(db))
             print("\nQuery is not prepared \(errorMessage)")
         }
         sqlite3_finalize(queryStatement)
+        return atms
     }
 }
 

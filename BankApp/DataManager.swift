@@ -27,16 +27,19 @@ class DataManager: DataManaging {
     }
 
     func fetchATMs() {
+        print("fetchATMs func")
         NetworkManager.shared.fetchData { result in
+            print("NetworkManager.shared.fetchData are starting")
             switch result {
             case .success(let response):
+                print("Connection")
                 self.sharedData = response.data.atm
-                let db = Storage.db
                 Storage.createTable()
                 response.data.atm.forEach { Storage.insert(atm: $0) }
             case .failure(let error):
-                print(error.localizedDescription)
+                print(error)
             }
         }
     }
 }
+

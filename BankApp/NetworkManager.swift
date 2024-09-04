@@ -18,6 +18,9 @@ enum DataError {
         case wrongURL
         case invalidResponse
         case decodingError
+        case noInternetConnection
+        case networkFailure(Error)
+        case unexpectedStatusCode(Int)
     }
 }
 
@@ -39,22 +42,46 @@ class NetworkManager: NetworkManagerProtocol {
     }
     
     func fetchData(completion: @escaping ((Result<ATMData, DataError.NetworkError>) -> Void))  {
+
         switch makeURL() {
         case .success(let url):
             let urlRequest = URLRequest(url: url)
             let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+
+                if let error = error as? URLError {
+                    switch error.code {
+                    case .networkConnectionLost, .notConnectedToInternet:
+                        completion(.failure(.noInternetConnection))
+                    default:
+                        completion(.failure(.networkFailure(error)))
+                    }
+                }
+                
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    completion(.failure(.invalidResponse))
+                    return
+                }
+                
+                guard (200...299).contains(httpResponse.statusCode) else {
+                    completion(.failure(.unexpectedStatusCode(httpResponse.statusCode)))
+                    return
+                }
+                
                 if let data = data {
                     do {
-                        let data = try JSONDecoder().decode(ATMData.self, from: data)
-                        completion(.success(data))
+                        let decodedData = try JSONDecoder().decode(ATMData.self, from: data)
+                        completion(.success(decodedData))
                     } catch {
                         completion(.failure(.decodingError))
                     }
+                } else {
+                    completion(.failure(.invalidResponse))
                 }
+               
             }
             task.resume()
         case .failure(let error):
-            print(error)
+            completion(.failure(error))
         }
     }
 }
